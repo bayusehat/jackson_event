@@ -64,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void RefreshList(){
         SQLiteDatabase db = dbcenter.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * FROM pesertas",null);
+        Session sess = new Session(this);
+        cursor = db.rawQuery("SELECT * FROM pesertas where user = '"+sess.getSPKota()+"'",null);
         daftar = new String[cursor.getCount()];
         listNama = new String[cursor.getCount()];
         cursor.moveToFirst();

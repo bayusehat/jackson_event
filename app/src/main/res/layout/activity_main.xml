@@ -12,16 +12,19 @@
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/listView1"
-        android:textSize="20dp" />
+        android:layout_height="wrap_content"
+        android:textSize="30dp" />
 
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
-        android:layout_height="593dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/welcomeText"
         android:layout_above="@+id/button2"
         android:layout_alignParentRight="true"
+        android:paddingLeft="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
         android:layout_marginBottom="3dp">
 
     </ListView>

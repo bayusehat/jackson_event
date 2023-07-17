@@ -18,13 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginUser extends AppCompatActivity{
-    public static final String SHARED_PREFS = "shared_prefs";
-    public static final String KOTA_INI = "place";
-
-    SharedPreferences sharedPreferences;
-    String kota;
     String[] users = {"--pilih kota--","SURABAYA","MALANG","KEDIRI"};
-
+    Session session;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +31,12 @@ public class LoginUser extends AppCompatActivity{
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
 
-        sharedPreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
-
-        kota = sharedPreferences.getString("KOTA_INI", null);
-
+        session = new Session(this);
+        if (session.getSPSudahLogin()){
+            startActivity(new Intent(LoginUser.this, MainActivity.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+            finish();
+        }
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,29 +44,14 @@ public class LoginUser extends AppCompatActivity{
                     TextView errorTextview = (TextView) spin.getSelectedView();
                     errorTextview.setError("Kota harus dipilih terlebih dahulu");
                 }else{
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                    editor.putString(KOTA_INI, spin.getSelectedItem().toString());
-                    editor.apply();
-
-                    Log.d("ISI",KOTA_INI);
-                    Log.d("INPUT",spin.getSelectedItem().toString());
-
+                    session.saveSPString(session.SP_KOTA, spin.getSelectedItem().toString());
+                    session.saveSPBoolean(session.SP_SUDAH_LOGIN, true);
                     Intent i = new Intent(LoginUser.this, MainActivity.class);
                     startActivity(i);
                     finish();
                 }
             }
         });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (kota != null) {
-            Intent i = new Intent(LoginUser.this, MainActivity.class);
-            startActivity(i);
-        }
     }
 
 }

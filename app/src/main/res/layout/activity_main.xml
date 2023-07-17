@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/listView1"
-        android:textSize="30dp" />
+        android:textSize="20dp" />
 
     <ListView
         android:id="@+id/listView1"
@@ -36,4 +36,15 @@
         android:layout_alignParentBottom="true"
         android:background="#FB1515"
         android:text="Input Peserta" />
+
+    <Button
+        android:id="@+id/button3"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_alignRight="@id/listView1"
+        android:layout_alignParentBottom="true"
+        android:background="#FB1A1A"
+        android:text="Logout" />
 </RelativeLayout>

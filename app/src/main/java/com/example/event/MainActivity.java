@@ -25,29 +25,18 @@ public class MainActivity extends AppCompatActivity {
     Menu menu;
     protected Cursor cursor;
     DataCenter dbcenter;
+
+    Session session;
     public static MainActivity ma;
-    public static final String SHARED_PREFS = "shared_prefs";
-    public static final String KOTA_INI = "place";
-
-    SharedPreferences sharedPreferences;
-    String kota;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        sharedPreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
-
-        // getting data from shared prefs and
-        // storing it in our string variable.
-        kota = sharedPreferences.getString("KOTA_INI", null);
-
-        TextView welcomeText = findViewById(R.id.welcomeText);
-        welcomeText.setText("Kamu login di " + kota);
-
         Button btn  = (Button)findViewById(R.id.button2);
+        Button btnLogout = (Button)findViewById(R.id.button3);
+        TextView kotaUser = (TextView) findViewById(R.id.welcomeText);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +48,18 @@ public class MainActivity extends AppCompatActivity {
         ma = this;
         dbcenter = new DataCenter(this);
         RefreshList();
+        session = new Session(this);
+
+        kotaUser.setText("Anda Login di "+session.getSPKota());
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                session.saveSPBoolean(session.SP_SUDAH_LOGIN, false);
+                startActivity(new Intent(MainActivity.this, LoginUser.class)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+                finish();
+            }
+        });
     }
 
     public void RefreshList(){

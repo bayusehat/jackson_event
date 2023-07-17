@@ -14,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/listView1"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:paddingBottom="5dp" />
 
     <ListView
         android:id="@+id/listView1"

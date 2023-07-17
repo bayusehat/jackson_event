@@ -40,23 +40,32 @@
         android:layout_marginTop="11dp"
         android:text="Gender" />
 
-    <EditText
-        android:id="@+id/editText2"
+<!--    <EditText-->
+<!--        android:id="@+id/editText2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/textView2"-->
+<!--        android:layout_alignLeft="@+id/textView2"-->
+<!--        android:layout_marginLeft="-4dp"-->
+<!--        android:layout_marginTop="0dp"-->
+<!--        android:inputType="text"-->
+<!--        android:hint="Laki/Perempuan"/>-->
+    <Spinner
+        android:id="@+id/spinnerGender"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_below="@+id/textView2"
         android:layout_alignLeft="@+id/textView2"
         android:layout_marginLeft="-4dp"
         android:layout_marginTop="0dp"
-        android:inputType="text"
-        android:hint="Laki/Perempuan"/>
+        />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText2"
-        android:layout_alignLeft="@+id/editText2"
+        android:layout_below="@+id/spinnerGender"
+        android:layout_alignLeft="@+id/spinnerGender"
         android:layout_marginLeft="3dp"
         android:layout_marginTop="9dp"
         android:text="Whatsapp Number" />

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     ListView ListView01;
     Menu menu;
     protected Cursor cursor;
-    DataCenter dbcenter;
+    DataMan dbcenter;
 
     Session session;
     public static MainActivity ma;
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ma = this;
-        dbcenter = new DataCenter(this);
+        dbcenter = new DataMan(this);
         RefreshList();
         session = new Session(this);
 

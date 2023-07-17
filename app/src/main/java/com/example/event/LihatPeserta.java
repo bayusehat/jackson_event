@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class LihatPeserta extends AppCompatActivity{
     protected Cursor cursor;
-    DataCenter dbHelper;
+    DataMan dbHelper;
     Button ton2;
     TextView text1, text2, text3, text4, text5, text6, text7;
 
@@ -19,7 +19,7 @@ public class LihatPeserta extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lihat_peserta);
 
-        dbHelper = new DataCenter(this);
+        dbHelper = new DataMan(this);
         text1 = (TextView) findViewById(R.id.textView1);
         text2 = (TextView) findViewById(R.id.textView2);
         text3 = (TextView) findViewById(R.id.textView3);

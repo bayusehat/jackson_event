@@ -84,6 +84,7 @@ public class BuatPeserta extends AppCompatActivity {
     }
 
     private boolean checkAllFields(){
+        Session sess = new Session(this);
         if(text1.length() == 0){
             text1.setError("Nama Lengkap harus diisi");
             return false;
@@ -99,6 +100,11 @@ public class BuatPeserta extends AppCompatActivity {
         }
         if(text4.length() == 0){
             text4.setError("Email harus diisi");
+            return false;
+        }
+        if(!sess.validEmail(text4.getText().toString())){
+            Toast.makeText(getApplicationContext(), "E-mail tidak sesuai format!", Toast.LENGTH_LONG).show();
+            text4.setError("Error");
             return false;
         }
         if(text5.length() == 0){

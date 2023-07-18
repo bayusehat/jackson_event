@@ -18,7 +18,27 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginUser extends AppCompatActivity{
-    String[] users = {"--pilih kota--","SURABAYA","MALANG","KEDIRI"};
+    String[] users = {
+            "EAST JAVA SERIES - NORTH REGION",
+            "CENTRAL JAVA SERIES - SOUTH REGION",
+            "BALI SERIES",
+            "DI JOGJAKARTA SERIES",
+            "EAST JAVA SERIES - SOUTH REGION",
+            "CENTRAL JAVA SERIES - NORTH REGION",
+            "RIAU SERIES",
+            "WEST JAVA SERIES - WEST REGION",
+            "EAST KALIMANTAN SERIES",
+            "DKI JAKARTA SERIES - WEST REGION",
+            "DKI JAKARTA SERIES - EAST REGION",
+            "DKI JAKARTA SERIES - SOUTH REGION",
+            "DKI JAKARTA SERIES - CHAMPIONSHIP SERIES",
+            "WEST JAVA SERIES - EAST REGION",
+            "BANTEN SERIES",
+            "EAST JAVA SERIES - WEST REGION",
+            "EAST JAVA SERIES - EAST REGION",
+            "SOUTH SUMATERA SERIES",
+            "SOUTH SULAWESI SERIES",
+            "NORTH SULAWESI SERIES"};
     Session session;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

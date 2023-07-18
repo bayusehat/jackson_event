@@ -2,6 +2,10 @@ package com.example.event;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
+import android.util.Patterns;
+
+import java.util.regex.Pattern;
 
 public class Session {
     public static final String SP_JACKSON = "spJacksonApp";
@@ -40,5 +44,20 @@ public class Session {
 
     public boolean getSPSudahLogin(){
         return sp.getBoolean(SP_SUDAH_LOGIN, false);
+    }
+
+    public boolean validEmail(String email){
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        return pattern.matcher(email).matches();
+    }
+
+    public boolean validUsername(String username){
+        String valAdd = username.substring(0,1);
+        Log.d("subtring",valAdd);
+        if(valAdd == "@"){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

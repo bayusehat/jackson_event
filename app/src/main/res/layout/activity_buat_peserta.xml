@@ -17,7 +17,9 @@
         android:layout_marginLeft="-4dp"
         android:layout_marginTop="-2dp"
         android:inputType="text"
-        android:hint="John Doe">
+        android:hint="John Doe"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
         <requestFocus />
     </EditText>
@@ -58,6 +60,8 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_marginLeft="-4dp"
         android:layout_marginTop="0dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         />
 
     <TextView
@@ -79,7 +83,9 @@
         android:layout_marginLeft="-3dp"
         android:layout_marginTop="-1dp"
         android:inputType="text"
-        android:hint="0812349390298"/>
+        android:hint="0812349390298"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -100,7 +106,9 @@
         android:layout_marginLeft="-3dp"
         android:layout_marginTop="0dp"
         android:hint="johndoe@gmail.com"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
     <TextView
         android:id="@+id/textView5"
@@ -122,7 +130,9 @@
         android:layout_marginTop="0dp"
         android:inputType="text"
         android:hint="(@)johndoe"
-        android:height="@dimen/field_height"/>
+        android:height="@dimen/field_height"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
     <TextView
         android:id="@+id/textView6"
@@ -142,7 +152,9 @@
         android:layout_alignLeft="@+id/editText5"
         android:layout_marginTop="0dp"
         android:inputType="text"
-        android:hint="SMK 10 Surabaya" />
+        android:hint="SMK 10 Surabaya"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
     <TextView
         android:id="@+id/textView7"
@@ -160,7 +172,9 @@
         android:layout_below="@id/textView7"
         android:layout_alignLeft="@id/editText6"
         android:inputType="text"
-        android:hint="Sosial Media, DBL, Others"/>
+        android:hint="Sosial Media, DBL, Others"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
 
     <Button

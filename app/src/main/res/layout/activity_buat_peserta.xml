@@ -176,26 +176,34 @@
         android:focusable="true"
         android:focusableInTouchMode="true"/>
 
-
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/button2"
         style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/editText5"
         android:layout_alignParentBottom="true"
-        android:background="#FD0606"
-        android:text="Simpan" />
+        android:background="#ED1212"
+        android:text="Kembali"
+        android:drawableLeft="@android:drawable/ic_menu_revert" />
 
     <Button
-        android:id="@+id/button2"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/editText5"
         android:layout_alignRight="@+id/editText5"
         android:layout_alignParentBottom="true"
-        android:background="#DC0F0F"
-        android:text="Kembali" />
+        android:id="@+id/button1"
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#118023"
+        android:text="Simpan"
+        android:drawableLeft="@android:drawable/ic_menu_add" />
+
 
 </RelativeLayout>

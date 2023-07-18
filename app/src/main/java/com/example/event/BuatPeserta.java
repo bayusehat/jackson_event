@@ -108,11 +108,11 @@ public class BuatPeserta extends AppCompatActivity {
             return false;
         }
         if(text5.length() == 0){
-            text5.setError("Username IG harus diisi");
+            text5.setError("Username Instagram harus diisi");
             return false;
         }
         if(text6.length() == 0){
-            text6.setError("Nama sekolah dan Kota harus diisi");
+            text6.setError("Nama sekolah dan kota harus diisi");
             return false;
         }
         if(text7.length() == 0){

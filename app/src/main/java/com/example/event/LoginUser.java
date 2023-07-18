@@ -13,12 +13,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginUser extends AppCompatActivity{
-    String[] users = {
+    String[] users = {"-- Pilih Kawasan --",
             "EAST JAVA SERIES - NORTH REGION",
             "CENTRAL JAVA SERIES - SOUTH REGION",
             "BALI SERIES",
@@ -45,6 +46,8 @@ public class LoginUser extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actvity_login);
 
+        ImageView imgLogo = (ImageView) findViewById(R.id.imageLogoLogin);
+        imgLogo.setImageResource(R.mipmap.ic_jackson_logo);
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         Button btnLogin = (Button) findViewById(R.id.buttonLogin);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, users);
@@ -60,9 +63,9 @@ public class LoginUser extends AppCompatActivity{
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(spin.getSelectedItem().toString() == "--pilih kota--"){
+                if(spin.getSelectedItem().toString() == "-- Pilih Kawasan --"){
                     TextView errorTextview = (TextView) spin.getSelectedView();
-                    errorTextview.setError("Kota harus dipilih terlebih dahulu");
+                    errorTextview.setError("Kawasan wajib dipilih terlebih dahulu");
                 }else{
                     session.saveSPString(session.SP_KOTA, spin.getSelectedItem().toString());
                     session.saveSPBoolean(session.SP_SUDAH_LOGIN, true);

@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Button btn  = (Button)findViewById(R.id.button2);
         Button btnLogout = (Button)findViewById(R.id.button3);
         TextView kotaUser = (TextView) findViewById(R.id.welcomeText);
+        TextView namaKota = (TextView) findViewById(R.id.welcomeText2);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
         RefreshList();
         session = new Session(this);
 
-        kotaUser.setText("Anda Login di "+session.getSPKota());
+        kotaUser.setText("Anda login dalam kawasan");
+        namaKota.setText(session.getSPKota());
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

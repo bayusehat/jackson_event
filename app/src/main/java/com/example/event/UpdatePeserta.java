@@ -119,7 +119,7 @@ public class UpdatePeserta extends AppCompatActivity{
             return false;
         }
         if(text6.length() == 0){
-            text6.setError("Nama sekolah dan Koata harus diisi");
+            text6.setError("Nama sekolah dan Kota harus diisi");
             return false;
         }
         if(text7.length() == 0){

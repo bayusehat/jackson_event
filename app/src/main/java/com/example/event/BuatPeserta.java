@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 public class BuatPeserta extends AppCompatActivity {
     protected Cursor cursor;
-    DataMan dbHelper;
+    DataHelper dbHelper;
     Button ton1, ton2;
     EditText text1, text3, text4, text5, text6, text7, text8;
     TextView textView8;
@@ -45,7 +45,7 @@ public class BuatPeserta extends AppCompatActivity {
         spin.setAdapter(adapter);
 
         session = new Session(this);
-        dbHelper = new DataMan(this);
+        dbHelper = new DataHelper(this);
         text1 = (EditText) findViewById(R.id.editText1);
         text3 = (EditText) findViewById(R.id.editText3);
         text4 = (EditText) findViewById(R.id.editText4);
@@ -58,6 +58,8 @@ public class BuatPeserta extends AppCompatActivity {
         ton1 = (Button) findViewById(R.id.button1);
         ton2 = (Button) findViewById(R.id.button2);
 
+        text7.setVisibility(View.INVISIBLE);
+        textView8.setVisibility(View.INVISIBLE);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
@@ -78,12 +80,12 @@ public class BuatPeserta extends AppCompatActivity {
                 isValid = checkAllFields();
                 if(isValid){
                     if(dbHelper.userIsFound(text5.getText().toString())){
-                        text5.setError("Username IG yang anda inputkan sudah terdaftar, silahkan menggunakan username yang lain");
+                        text5.setError("Username Instagram yang anda inputkan sudah terdaftar, silahkan menggunakan username yang lain");
                     }else {
                         int selectedId = radioGroup.getCheckedRadioButtonId();
                         radioButton = (RadioButton) findViewById(selectedId);
                         SQLiteDatabase db = dbHelper.getWritableDatabase();
-                        db.execSQL("insert into pesertas(nama, jk, no_hp, email, username_ig, username_tiktok, asal, know_jackson, others_now, user) values('" +
+                        db.execSQL("insert into pesertas(nama, jk, no_hp, email, username_ig, username_tiktok, asal, know_jackson, others_know, user) values('" +
                                 text1.getText().toString() + "','" +
                                 spin.getSelectedItem().toString() + "','" +
                                 text3.getText().toString() + "','" +
@@ -126,6 +128,10 @@ public class BuatPeserta extends AppCompatActivity {
             text3.setError("Whatsapp number harus diisi");
             return false;
         }
+        if(text3.length() < 10){
+            text3.setError("Whatsapp number tidak valid");
+            return false;
+        }
         if(text4.length() == 0){
             text4.setError("Email harus diisi");
             return false;
@@ -145,10 +151,10 @@ public class BuatPeserta extends AppCompatActivity {
                 return false;
             }
         }
-        if(text6.length() == 0){
-            text6.setError("Nama sekolah harus diisi");
-            return false;
-        }
+//        if(text6.length() == 0){
+//            text6.setError("Nama sekolah harus diisi");
+//            return false;
+//        }
 //        if(text7.length() == 0){
 //            text7.setError("Tentang Jackson field harus diisi");
 //            return false;

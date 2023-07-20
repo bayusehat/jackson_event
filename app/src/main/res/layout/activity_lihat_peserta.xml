@@ -59,6 +59,7 @@
         android:textStyle="bold"
         android:text="TextView" />
 
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
@@ -80,13 +81,42 @@
         android:text="TextView" />
 
     <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView7"
+        android:layout_below="@+id/textView7"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView8"
+        android:layout_alignRight="@+id/textView8"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/TextView08"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView8"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_alignLeft="@+id/TextView07"
+        android:text="Tahu Jackson dari" />
+
+    <TextView
         android:id="@+id/TextView07"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView7"
         android:layout_alignBottom="@+id/textView7"
         android:layout_alignLeft="@+id/TextView06"
-        android:text="Tahu Jackson dari" />
+        android:text="Nama Sekolah" />
 
     <TextView
         android:id="@+id/TextView06"
@@ -95,7 +125,7 @@
         android:layout_alignBaseline="@+id/textView6"
         android:layout_alignBottom="@+id/textView6"
         android:layout_alignLeft="@+id/TextView05"
-        android:text="Asal Sekolah dan Kota" />
+        android:text="Username TikTok" />
 
     <TextView
         android:id="@+id/TextView05"
@@ -104,7 +134,7 @@
         android:layout_alignBaseline="@+id/textView5"
         android:layout_alignBottom="@+id/textView5"
         android:layout_alignLeft="@+id/TextView03"
-        android:text="Username IG" />
+        android:text="Username Instagram" />
 
     <TextView
         android:id="@+id/TextView03"
@@ -149,8 +179,8 @@
         android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TextView07"
-        android:layout_alignLeft="@+id/TextView07"
+        android:layout_below="@+id/TextView08"
+        android:layout_alignLeft="@+id/TextView08"
         android:layout_marginTop="34dp"
         android:background="#ED1212"
         android:text="Kembali"

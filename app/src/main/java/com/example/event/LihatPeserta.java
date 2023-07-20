@@ -10,16 +10,16 @@ import android.widget.TextView;
 
 public class LihatPeserta extends AppCompatActivity{
     protected Cursor cursor;
-    DataMan dbHelper;
+    DataHelper dbHelper;
     Button ton2;
-    TextView text1, text2, text3, text4, text5, text6, text7;
+    TextView text1, text2, text3, text4, text5, text6, text7, text8, text9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lihat_peserta);
 
-        dbHelper = new DataMan(this);
+        dbHelper = new DataHelper(this);
         text1 = (TextView) findViewById(R.id.textView1);
         text2 = (TextView) findViewById(R.id.textView2);
         text3 = (TextView) findViewById(R.id.textView3);
@@ -27,6 +27,8 @@ public class LihatPeserta extends AppCompatActivity{
         text5 = (TextView) findViewById(R.id.textView5);
         text6 = (TextView) findViewById(R.id.textView6);
         text7 = (TextView) findViewById(R.id.textView7);
+        text8 = (TextView) findViewById(R.id.textView8);
+        text9 = (TextView) findViewById(R.id.textView9);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         cursor = db.rawQuery("SELECT * FROM pesertas WHERE id = "+
                 getIntent().getStringExtra("id") ,null);
@@ -41,6 +43,8 @@ public class LihatPeserta extends AppCompatActivity{
             text5.setText(cursor.getString(5).toString());
             text6.setText(cursor.getString(6).toString());
             text7.setText(cursor.getString(7).toString());
+            text8.setText(cursor.getString(8).toString());
+            text9.setText(cursor.getString(9).toString());
 
         }
         ton2 = (Button) findViewById(R.id.button1);

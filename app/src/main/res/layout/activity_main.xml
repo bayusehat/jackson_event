@@ -61,6 +61,21 @@
         android:drawableLeft="@android:drawable/ic_menu_add" />
 
     <Button
+        android:id="@+id/button4"
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/design_default_color_primary_dark"
+        android:text="Export"
+        android:drawableLeft="@android:drawable/ic_menu_share" />
+
+    <Button
         android:id="@+id/button3"
         style="?android:attr/borderlessButtonStyle"
         android:textColor="@color/white"

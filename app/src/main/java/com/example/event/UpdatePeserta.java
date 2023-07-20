@@ -117,7 +117,7 @@ public class UpdatePeserta extends AppCompatActivity{
         }
         if(!sess.validEmail(text4.getText().toString())){
             Toast.makeText(getApplicationContext(), "E-mail tidak sesuai format!", Toast.LENGTH_LONG).show();
-            text4.setError("Error");
+            text4.setError("E-mail tidak sesuai format");
             return false;
         }
         if(text5.length() == 0){

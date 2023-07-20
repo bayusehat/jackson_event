@@ -20,26 +20,27 @@ import android.widget.Toast;
 
 public class LoginUser extends AppCompatActivity{
     String[] users = {"-- Pilih Kawasan --",
-            "EAST JAVA SERIES - NORTH REGION",
-            "CENTRAL JAVA SERIES - SOUTH REGION",
-            "BALI SERIES",
-            "DI JOGJAKARTA SERIES",
-            "EAST JAVA SERIES - SOUTH REGION",
-            "CENTRAL JAVA SERIES - NORTH REGION",
-            "RIAU SERIES",
-            "WEST JAVA SERIES - WEST REGION",
-            "EAST KALIMANTAN SERIES",
-            "DKI JAKARTA SERIES - WEST REGION",
-            "DKI JAKARTA SERIES - EAST REGION",
-            "DKI JAKARTA SERIES - SOUTH REGION",
-            "DKI JAKARTA SERIES - CHAMPIONSHIP SERIES",
-            "WEST JAVA SERIES - EAST REGION",
-            "BANTEN SERIES",
-            "EAST JAVA SERIES - WEST REGION",
-            "EAST JAVA SERIES - EAST REGION",
-            "SOUTH SUMATERA SERIES",
-            "SOUTH SULAWESI SERIES",
-            "NORTH SULAWESI SERIES"};
+            "Surabaya",
+            "Solo",
+            "Denpasar",
+            "Jogjakarta",
+            "Malang",
+            "Semarang",
+            "Pekanbaru",
+            "Bogor",
+            "Samarinda",
+            "Jakarta Barat",
+            "Jakarta Timur",
+            "Jakarta Selatan",
+            "Jakarta Chamoionship",
+            "Bandung",
+            "Tangerang",
+            "Madiun",
+            "Jember",
+            "Palembang",
+            "Makassar",
+            "Manado",
+    };
     Session session;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,6 +66,7 @@ public class LoginUser extends AppCompatActivity{
             public void onClick(View view) {
                 if(spin.getSelectedItem().toString() == "-- Pilih Kawasan --"){
                     TextView errorTextview = (TextView) spin.getSelectedView();
+                    Toast.makeText(getApplicationContext(), "Kawasan wajib dipilih terlebih dahulu", Toast.LENGTH_LONG).show();
                     errorTextview.setError("Kawasan wajib dipilih terlebih dahulu");
                 }else{
                     session.saveSPString(session.SP_KOTA, spin.getSelectedItem().toString());

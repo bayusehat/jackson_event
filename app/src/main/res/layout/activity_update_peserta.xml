@@ -16,7 +16,7 @@
         android:layout_alignLeft="@+id/textView1"
         android:layout_marginLeft="-4dp"
         android:layout_marginTop="-2dp"
-        android:inputType="text"
+        android:inputType="textCapWords|textCapSentences"
         android:hint="John Doe">
 
         <requestFocus />
@@ -101,7 +101,7 @@
         android:layout_alignLeft="@+id/editText4"
         android:layout_marginLeft="3dp"
         android:layout_marginTop="10dp"
-        android:text="Username Instagram" />
+        android:text="Username Instagram (Tanpa @)" />
 
     <EditText
         android:id="@+id/editText5"

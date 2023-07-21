@@ -6,6 +6,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class DataHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "event_final.db";
     private static final int DATABASE_VERSION = 2;
@@ -41,6 +45,18 @@ public class DataHelper extends SQLiteOpenHelper {
     public boolean tiktokFound(String userExist){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "select username_tiktok from pesertas where username_tiktok = '"+userExist+"'";
+        Cursor data = db.rawQuery(query, null);
+        if(data.getCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean todayExist(String userExist){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        String query = "select username_ig, strftime('%d-%m-%Y', created_at) AS hari_ini from pesertas where username_ig = '"+userExist+"' and hari_ini = '"+currentDate+"'";
         Cursor data = db.rawQuery(query, null);
         if(data.getCount() > 0){
             return true;

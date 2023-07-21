@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         Button btn  = (Button)findViewById(R.id.button2);
         Button btnLogout = (Button)findViewById(R.id.button3);
         Button btnExport = (Button) findViewById(R.id.button4);
+//        Button btnRefresh = (Button) findViewById(R.id.button5);
         TextView kotaUser = (TextView) findViewById(R.id.welcomeText);
         TextView namaKota = (TextView) findViewById(R.id.welcomeText2);
 
@@ -152,6 +153,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+//        btnRefresh.setOnClickListener(new View.OnClickListener() {
+//            SQLiteDatabase db = dbcenter.getReadableDatabase();
+//            @Override
+//            public void onClick(View view) {
+//                cursor = db.rawQuery("DELETE FROM pesertas where user = '"+session.getSPKota()+"'",null);
+//
+//            }
+//        });
     }
 
     public void RefreshList(){

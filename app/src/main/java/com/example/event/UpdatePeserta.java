@@ -25,7 +25,7 @@ public class UpdatePeserta extends AppCompatActivity{
     Spinner spin;
     RadioGroup radioGroup;
     RadioButton radioButton;
-    String[] gender = {"Laki","Perempuan"};
+    String[] gender = {"Laki-laki","Perempuan"};
     private boolean isValid;
 
     @SuppressLint("MissingInflatedId")

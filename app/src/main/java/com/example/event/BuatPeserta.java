@@ -31,7 +31,7 @@ public class BuatPeserta extends AppCompatActivity {
     RadioButton radioButton;
     boolean isValid = false;
 
-    String[] gender = {"Laki","Perempuan"};
+    String[] gender = {"Laki-laki","Perempuan"};
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -79,7 +79,7 @@ public class BuatPeserta extends AppCompatActivity {
                 // TODO Auto-generated method stub
                 isValid = checkAllFields();
                 if(isValid){
-                    if(dbHelper.userIsFound(text5.getText().toString())){
+                    if(dbHelper.todayExist(text5.getText().toString())){
                         text5.setError("Username Instagram yang anda inputkan sudah terdaftar, silahkan menggunakan username yang lain");
                     }else {
                         int selectedId = radioGroup.getCheckedRadioButtonId();
@@ -143,6 +143,10 @@ public class BuatPeserta extends AppCompatActivity {
         }
         if(text5.length() == 0){
             text5.setError("Username Instagram harus diisi");
+            return false;
+        }
+        if(dbHelper.todayExist(text5.getText().toString())){
+            text5.setError("Username Instagram sudah digunakan, silahkan coba lagi");
             return false;
         }
         if(text8.length() > 0){
